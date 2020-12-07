@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="1200, initial-scale=1.0">
+    <title>事件委托事例</title>
+    <style>
+        .box{
+            background-color: coral;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li>java</li>
+        <li>javascript</li>
+        <li>php</li>
+        <li>python</li>
+    </ul>
+    <script>
+        const oList=document.querySelector('#list')
+        oList.addEventListener('mouseover',(e)=>{
+            if(e.target !=e.currentTarget){
+            e.target.classList.add('box')
+            }
+        })
+        oList.addEventListener('mouseout',(e)=>{
+            e.target.classList.remove('box')
+        })
+    </script>
+</body>
+</html>
